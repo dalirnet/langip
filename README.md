@@ -1,6 +1,8 @@
 #### langip (Detect language with IP address)
 
-## What language does this IP speak?
+What language does this IP speak?
+
+---
 
 #### IP2Location
 
