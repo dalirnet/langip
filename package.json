@@ -1,6 +1,6 @@
 {
     "name": "langip",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "What language does this IP speak?",
     "main": "index.js",
     "scripts": {
