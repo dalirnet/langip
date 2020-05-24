@@ -1,7 +1,11 @@
+const _ = require("lodash");
 const irip = require("./index");
-const [[start, end]] = require("./db/IR.json");
+const { languages } = require("./src/config.json");
 
-test("utility & database", () => {
-  expect(irip.utility.ipTolong(irip.utility.longToip(start))).toBe(start);
-  expect(irip.utility.ipTolong(irip.utility.longToip(end))).toBe(end);
+_.forEach(languages, (value, key) => {
+  test(`utility with database [${key}]`, () => {
+    const [[start, end]] = require(`./db/${key}.json`);
+    expect(irip.utility.ipTolong(irip.utility.longToip(start))).toBe(start);
+    expect(irip.utility.ipTolong(irip.utility.longToip(end))).toBe(end);
+  });
 });
