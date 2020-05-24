@@ -1,6 +1,6 @@
 {
     "name": "langip",
-    "version": "1.0.02",
+    "version": "1.0.1",
     "description": "What language does this IP speak?",
     "main": "index.js",
     "scripts": {
@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dalirnet/irip.git"
+        "url": "git+https://github.com/dalirnet/langip.git"
     },
     "keywords": [
         "iran",
