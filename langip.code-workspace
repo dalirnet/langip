@@ -1,8 +1,35 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "name": "db",
+            "path": "db"
+        },
+        {
+            "name": "src",
+            "path": "src"
+        },
+        {
+            "name": "root",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/node_modules": true,
+            "**/.prettierrc": true,
+            "**/.gitignore": true,
+            "**/.npmignore": true,
+            "**/langip.code-workspace": false,
+            "**/LICENSE": true,
+            "**/package-lock.json": true,
+            "src": true,
+            "db": true
+        },
+        "explorerExclude.backup": null
+    }
 }
