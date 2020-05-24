@@ -1,6 +1,6 @@
 const _ = require('lodash')
 const langip = require('./index')
-const { languages } = require('./src/config.json')
+const { languages } = require('./build/config.json')
 
 _.forEach(_.keys(languages), (key) => {
     test(`utility with database [${key}]`, () => {

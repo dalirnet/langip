@@ -5,6 +5,10 @@
             "path": "db"
         },
         {
+            "name": "build",
+            "path": "build"
+        },
+        {
             "name": "src",
             "path": "src"
         },
@@ -24,11 +28,12 @@
             "**/.prettierrc": true,
             "**/.gitignore": true,
             "**/.npmignore": true,
-            "**/langip.code-workspace": true,
+            "**/langip.code-workspace": false,
             "**/LICENSE": true,
             "**/package-lock.json": true,
-            "src": true,
-            "db": true
+            "build": true,
+            "db": true,
+            "src": true
         },
         "explorerExclude.backup": null
     }

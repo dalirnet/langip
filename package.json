@@ -1,11 +1,12 @@
 {
     "name": "langip",
-    "version": "1.0.01",
+    "version": "1.0.02",
     "description": "What language does this IP speak?",
     "main": "index.js",
     "scripts": {
-        "download": "node src/download.js",
-        "convert": "node src/convert.js",
+        "download": "node build/download.js",
+        "convert": "node build/convert.js",
+        "build": "npm run download && npm run convert",
         "test": "jest"
     },
     "repository": {
