@@ -3,11 +3,13 @@ const langip = require('../index')
 const { languages } = require('../build/config.json')
 
 _.forEach(_.keys(languages), (key) => {
-    test(`utility & database [${key}]`, () => {
-        const [[start, end]] = require(`../db/${key}.json`)
-        expect(langip.utility.ipTolong(langip.utility.longToip(start))).toBe(
-            start
-        )
-        expect(langip.utility.ipTolong(langip.utility.longToip(end))).toBe(end)
+    const [[start, end]] = require(`../db/${key}.json`)
+    const IpStart = langip.utility.longToip(start)
+    const IpEnd = langip.utility.longToip(end)
+    test(`utility [${key}] [${start}] => [${IpStart}]`, () => {
+        expect(langip.utility.ipTolong(IpStart)).toBe(start)
+    })
+    test(`utility [${key}] [${IpEnd}] => [${end}]`, () => {
+        expect(langip.utility.longToip(end)).toBe(IpEnd)
     })
 })
