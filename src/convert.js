@@ -12,15 +12,24 @@ logUpdate(`Converting ...`);
 parseFile(path.resolve(`db/ip2location/${file}`))
   .on("data", ([start, end, code]) => {
     _.forEach(languages, (countries, language) => {
-        
+      if (_.includes(countries, code)) {
+        if (!_.has(flatDatabase, language)) {
+          flatDatabase[language] = [];
+        }
+        flatDatabase[language].push([Number(start), Number(end), code]);
+        logUpdate(
+          `Converted [${flatDatabase[language].length}] for [${language}]`
+        );
+      }
     });
-    if (code == language) {
-      logUpdate(`Converted [${data.length}] row`);
-      data.push([Number(start), Number(end)]);
-    }
   })
   .on("end", () => {
-    fs.writeFileSync(path.resolve(`db/${country}.json`), JSON.stringify(data));
+    _.forEach(flatDatabase, (data, language) => {
+      fs.writeFileSync(
+        path.resolve(`db/${language}.json`),
+        JSON.stringify(data)
+      );
+    });
     logUpdate(`Done.`);
   })
   .on("error", () => {

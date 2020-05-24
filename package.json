@@ -1,5 +1,5 @@
 {
-  "name": "faip",
+  "name": "langip",
   "version": "1.0.0",
   "description": "What language does this IP speak?",
   "main": "index.js",

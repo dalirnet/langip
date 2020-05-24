@@ -1,6 +1,6 @@
 {
   "file": "IP2LOCATION-LITE-DB1.CSV",
-  "language": {
+  "languages": {
     "Fa": ["IR", "AF", "TJ"],
     "Ar": ["SA", "IQ", "KW", "BH", "AE", "QA", "OM"]
   }
