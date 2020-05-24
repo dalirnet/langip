@@ -12,21 +12,24 @@ logUpdate(`Downloading ...`);
 wget
   .download(
     `https://download.ip2location.com/lite/${file}.ZIP`,
-    path.resolve(`db/${file}.zip`)
+    path.resolve(`db/ip2location/${file}.zip`)
   )
   .on("start", (sizeOfFile) => {
     fileSize = sizeOfFile;
   })
   .on("progress", (progress) => {
     logUpdate(
-      `Downloading [${Math.floor(progress * 100)}%] from [${prettyBytes(
+      `Downloaded [${prettyBytes(fileSize * progress)}] of [${prettyBytes(
         fileSize
       )}]`
     );
   })
   .on("end", () => {
     logUpdate(`Extracting ...`);
-    decompress(path.resolve(`db/${file}.zip`), path.resolve("db"))
+    decompress(
+      path.resolve(`db/ip2location/${file}.zip`),
+      path.resolve("db/ip2location")
+    )
       .then(() => {
         logUpdate(`Done.`);
       })
