@@ -90,6 +90,8 @@ let ip = utility.longToip(42991616)
 console.log(ip) /* 2.144.0.0 */
 ```
 
+---
+
 #### Build
 
 For update IP2Location database or add new language detector
@@ -111,6 +113,8 @@ or
 ```javascript
 npm run build
 ```
+
+---
 
 #### Test
 
@@ -152,6 +156,8 @@ npm run test
   √ utility [Ar] [34643456] => [2.16.158.0]
   √ utility [Ar] [2.16.158.255] => [34643711] (1 ms)
 ```
+
+---
 
 #### IP2Location
 
