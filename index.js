@@ -1,5 +1,4 @@
-const utility = require('./src/utility')
-const langip = require('./src/index')
-
-exports.utility = utility
-exports.langip = langip
+exports.utility = require('./language/utility')
+exports.detect = require('./language/detect')
+exports.isFa = require('./language/Fa')
+exports.isAr = require('./language/Ar')

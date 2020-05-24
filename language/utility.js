@@ -14,4 +14,15 @@ module.exports = {
             })
             .join('.')
     },
+    find(ip, database) {
+        let long = this.ipTolong(ip)
+        return new Promise((resolve) => {
+            if (long) {
+                resolve(
+                    database.some(([start, end]) => long >= start && long < end)
+                )
+            }
+            resolve(false)
+        })
+    },
 }
