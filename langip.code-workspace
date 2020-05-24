@@ -24,7 +24,7 @@
             "**/.prettierrc": true,
             "**/.gitignore": true,
             "**/.npmignore": true,
-            "**/langip.code-workspace": false,
+            "**/langip.code-workspace": true,
             "**/LICENSE": true,
             "**/package-lock.json": true,
             "src": true,
