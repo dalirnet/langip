@@ -1,0 +1,31 @@
+{
+  "name": "irip",
+  "version": "1.0.0",
+  "description": "Is this an Iranian IP address?",
+  "main": "index.js",
+  "scripts": {
+    "download": "node src/download.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalirnet/irip.git"
+  },
+  "keywords": [
+    "iran",
+    "ip",
+    "iran-ip",
+    "ip-location"
+  ],
+  "author": "AmirRezaDalir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dalirnet/irip/issues"
+  },
+  "homepage": "https://github.com/dalirnet/irip#readme",
+  "devDependencies": {
+    "decompress": "^4.2.1",
+    "log-update": "^4.0.0",
+    "pretty-bytes": "^5.3.0",
+    "wget-improved": "^3.2.0"
+  }
+}
