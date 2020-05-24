@@ -1,16 +1,20 @@
 const fs = require("fs");
 const path = require("path");
+const _ = require("lodash");
 const logUpdate = require("log-update");
 const { parseFile } = require("@fast-csv/parse");
 
 // config
-const { file, country } = require("./config.json");
-let data = [];
+const { file, languages } = require("./config.json");
+let flatDatabase = {};
 
 logUpdate(`Converting ...`);
 parseFile(path.resolve(`db/ip2location/${file}`))
   .on("data", ([start, end, code]) => {
-    if (code == country) {
+    _.forEach(languages, (countries, language) => {
+        
+    });
+    if (code == language) {
       logUpdate(`Converted [${data.length}] row`);
       data.push([Number(start), Number(end)]);
     }

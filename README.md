@@ -1,6 +1,7 @@
-# irip (iran-ip)
-Is this an Iranian IP address?
+## langip (Language from IP address)
 
+What language does this IP speak?
 
-# IP2Location
+## IP2Location
+
 This package includes [IP2Location](https://lite.ip2location.com) LITE data
