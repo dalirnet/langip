@@ -1,5 +1,5 @@
 const isFa = require('./Fa')
-const isAr = require('./AR')
+const isAr = require('./Ar')
 
 module.exports = (ip, fallback = 'En') => {
     return new Promise(async (resolve) => {
