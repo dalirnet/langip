@@ -77,13 +77,13 @@ const isAr = require("langip/language/Ar")
 
 /* async await */
 async () => {
-    let status = await isFa("194.31.220.14")    /* isAr(ip) */
+    let status = await isAr("194.31.220.14")    /* isAr(ip) */
     console.log(status) /* true */
 })
 
 
 /* promise */
-isFa("1.1.1.1").then((status) => {
+isAr("1.1.1.1").then((status) => {
     console.log(status) /* false */
 })
 ```
