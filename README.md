@@ -1,6 +1,18 @@
 #### Detect language with IP address (langip)
 
-What language does this IP speak?
+✔️ **Free** & Easy
+
+✔️ Clean & **Fast**
+
+✔️ Zero dependency & **No limit**
+
+✔️ **Without** need licence key
+
+✔️ No **HTTP** connection
+
+✔️ **Ip2Location** database
+
+✔️ Included **Persian** and **Arabic** as default
 
 ---
 
@@ -8,7 +20,7 @@ What language does this IP speak?
 
 -   Install
 
-```javascript
+```bash
 npm install langip --save
 ```
 
@@ -31,7 +43,7 @@ langip.detect("103.127.119.132").then((lang) => {
 })
 ```
 
--   As specific language (included **Persian** and **Arabic**)
+-   As specific language (included **Persian** and **Arabic**) _*recommended*_
 
 ```javascript
 /*
@@ -98,19 +110,19 @@ For update IP2Location database or add new language detector
 
 -   Downloading latest database
 
-```javascript
+```bash
 npm run download
 ```
 
 -   Converting large file to small chunk files with [config.json](https://github.com/dalirnet/langip/blob/master/build/config.json)
 
-```javascript
+```bash
 npm run convert
 ```
 
 or
 
-```javascript
+```bash
 npm run build
 ```
 
@@ -118,7 +130,7 @@ npm run build
 
 #### Test
 
-```javascript
+```bash
 npm run test
 ```
 
