@@ -1,6 +1,6 @@
 {
     "name": "langip",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "description": "Detect language with IP address",
     "main": "index.js",
     "scripts": {
@@ -24,6 +24,7 @@
         "language",
         "ip",
         "location",
+        "ip2location",
         "iran"
     ],
     "author": "AmirRezaDalir",

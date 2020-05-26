@@ -1,5 +1,7 @@
 #### Detect language with IP address (langip)
 
+---
+
 ✔️ **Free** & no registration
 
 ✔️ **Fast** & No **HTTP** connection
@@ -216,7 +218,7 @@ To update IP2Location database or add a new language detector
 
 -   config file in _**build/config.json**_
 
-    -   ISO [639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php) Language Code List
+    -   ISO [639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) Language Code List
     -   List of [official](https://en.wikipedia.org/wiki/List_of_languages_by_the_number_of_countries_in_which_they_are_recognized_as_an_official_language#List) languages
 
 ```json
@@ -234,7 +236,7 @@ To update IP2Location database or add a new language detector
 }
 ```
 
--   Downloading latest database
+-   Download latest database
 
 ```bash
 npm run download
