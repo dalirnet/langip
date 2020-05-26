@@ -27,23 +27,6 @@ npm install langip --save
 ```javascript
 const langip = require("langip")
 
-/*
-    detect()
-
-        ip          String:required
-
-        fallback    String:optional
-                    default:"En"
-
-        target      Array:optional:priority
-                    default:["Ar", "Fa", "Zh", "Es", "Fr", "Tr", "Ko"]
-*/
-
-async () => {
-    let lang = await langip.detect("8.8.8.8","En")  /* detect(ip, fallback, target) */
-    console.log(lang)   /* En */
-})
-
 /* async await */
 async () => {
     let lang = await langip.detect("8.8.8.8")  /* detect(ip, fallback, target) */
@@ -54,6 +37,22 @@ async () => {
 langip.detect("103.127.119.132").then((lang) => {
     console.log(lang)   /* Fa */
 })
+
+/*
+    detect(
+        ip,         (String)
+                    (Required)
+
+        fallback,   (String)
+                    (Optional)
+                    (Default:"En")
+
+        target,     (Array)
+                    (Optional)
+                    (Priority)
+                    (Default:["Ar", "Fa", "Zh", "Es", "Fr", "Tr", "Ko"])
+    )
+*/
 ```
 
 -   As specific language **(recommended)**
