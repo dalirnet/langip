@@ -1,0 +1,18 @@
+const _ = require('lodash')
+const { utility } = require('../index')
+const is{{LANG}} = require('../language/{{LANG}}')
+const [start, end] = _.sample(require(`../db/{{LANG}}.json`))
+
+const randomLong = _.random(start, end - 1)
+const ip = utility.longToip(randomLong)
+test(`is{{LANG}} [${ip}] => [true]`, async () => {
+    expect.assertions(1)
+    let test = await is{{LANG}}(ip)
+    expect(test).toBe(true)
+})
+const fallbackIp = '0.0.0.0'
+test(`is{{LANG}} [${fallbackIp}] => [false]`, async () => {
+    expect.assertions(1)
+    let test = await is{{LANG}}(fallbackIp)
+    expect(test).toBe(false)
+})

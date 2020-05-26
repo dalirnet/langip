@@ -1,0 +1,3 @@
+exports.utility = require('./language/utility')
+exports.detect = require('./language/detect')
+{{REQUIRE}}

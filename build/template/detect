@@ -1,0 +1,8 @@
+{{REQUIRE}}
+
+module.exports = (ip, fallback = 'En') => {
+    return new Promise(async (resolve) => {
+        {{USE}}
+        resolve(fallback)
+    })
+}
