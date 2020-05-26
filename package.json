@@ -1,6 +1,6 @@
 {
     "name": "langip",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "Detect language with IP address",
     "main": "index.js",
     "scripts": {
@@ -14,10 +14,18 @@
         "url": "git+https://github.com/dalirnet/langip.git"
     },
     "keywords": [
-        "iran",
+        "arabic",
+        "persian",
+        "chinese",
+        "spanish",
+        "french",
+        "turkish",
+        "korean",
+        "lang",
+        "language",
         "ip",
-        "iran-ip",
-        "ip-location"
+        "location",
+        "iran"
     ],
     "author": "AmirRezaDalir",
     "license": "MIT",
