@@ -1,16 +1,12 @@
 #### Detect language with IP address (langip)
 
-✔️ **Free** & Easy
+✔️ **Free** & no registration
 
-✔️ Clean & **Fast**
+✔️ **Fast** & No **HTTP** connection
 
 ✔️ Zero dependency & **No limit**
 
-✔️ **Without** need licence key
-
-✔️ No **HTTP** connection
-
-✔️ **Ip2Location** database
+✔️ **Ip2Location** database & configable build
 
 ✔️ Includeds **Arabic**, **Persian**, **Chinese**, **Spanish**, **French**, **Turkish**, **Korean** as default
 
@@ -29,13 +25,11 @@ npm install langip --save
 ```javascript
 const langip = require("langip")
 
-
 /* async await */
 async () => {
     let lang = await langip.detect("8.8.8.8","En")  /* detect(ip,fallback) */
     console.log(lang)   /* En */
 })
-
 
 /* promise */
 langip.detect("103.127.119.132").then((lang) => {
@@ -49,7 +43,7 @@ langip.detect("103.127.119.132").then((lang) => {
 ```javascript
 /*
     Arabic [Ar]
-    Countries [SA, IQ, KW, BH, AE, QA, OM]
+    Countries [SA, IQ, KW, BH, AE, QA, OM, EG, SD]
 */
 
 const isAr = require("langip/language/Ar")
@@ -218,21 +212,16 @@ console.log(ip) /* 2.144.0.0 */
 
 #### Build
 
-For update IP2Location database or add new language detector
+To update IP2Location database or add a new language detector
 
--   Downloading latest database
-
-```bash
-npm run download
-```
-
--   config convert in _**build/config.json**_
+-   config file in _**build/config.json**_
 
     -   ISO [639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php) Language Code List
     -   List of [official](https://en.wikipedia.org/wiki/List_of_languages_by_the_number_of_countries_in_which_they_are_recognized_as_an_official_language#List) languages
 
 ```json
 {
+    "file": "IP2LOCATION-LITE-DB1.CSV",
     "languages": {
         "Ar": ["SA", "IQ", "KW", "BH", "AE", "QA", "OM", "EG", "SD"],
         "Fa": ["IR", "AF", "TJ"],
@@ -245,10 +234,16 @@ npm run download
 }
 ```
 
--   Converting large database file to small chunk files
+-   Downloading latest database
 
 ```bash
-npm run convert
+npm run download
+```
+
+-   Convert IP2Location database to small chunk files
+
+```bash
+npm run build
 ```
 
 ---

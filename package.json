@@ -5,8 +5,7 @@
     "main": "index.js",
     "scripts": {
         "download": "node build/download.js",
-        "convert": "node build/convert.js",
-        "build": "npm run download && npm run convert",
+        "build": "node build/build.js",
         "test": "jest"
     },
     "repository": {
