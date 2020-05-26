@@ -1,48 +1,19 @@
-const isAr = require('./Ar')
-const isFa = require('./Fa')
-const isZh = require('./Zh')
-const isEs = require('./Es')
-const isFr = require('./Fr')
-const isTr = require('./Tr')
-const isKo = require('./Ko')
+const utility = require('./utility')
+const { languages } = require('../build/config.json')
+const languagesKey = Object.keys(languages)
 
-module.exports = (ip, fallback = 'En') => {
+module.exports = (ip, fallback = 'En', target = languagesKey) => {
     return new Promise(async (resolve) => {
-        await isAr(ip).then((status) => {
-            if (status) {
-                resolve('Ar')
+        for (const lang of target) {
+            if (languagesKey.includes(lang)) {
+                const database = require(`../db/${lang}.json`)
+                await utility.find(ip, database).then((status) => {
+                    if (status) {
+                        resolve(lang)
+                    }
+                })
             }
-        })
-        await isFa(ip).then((status) => {
-            if (status) {
-                resolve('Fa')
-            }
-        })
-        await isZh(ip).then((status) => {
-            if (status) {
-                resolve('Zh')
-            }
-        })
-        await isEs(ip).then((status) => {
-            if (status) {
-                resolve('Es')
-            }
-        })
-        await isFr(ip).then((status) => {
-            if (status) {
-                resolve('Fr')
-            }
-        })
-        await isTr(ip).then((status) => {
-            if (status) {
-                resolve('Tr')
-            }
-        })
-        await isKo(ip).then((status) => {
-            if (status) {
-                resolve('Ko')
-            }
-        })
+        }
         resolve(fallback)
     })
 }

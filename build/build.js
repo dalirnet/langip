@@ -28,9 +28,6 @@ parseFile(path.resolve(`db/ip2location/${file}`))
             index: fs
                 .readFileSync(path.resolve('build/template/index'))
                 .toString(),
-            detect: fs
-                .readFileSync(path.resolve('build/template/detect'))
-                .toString(),
             module: fs
                 .readFileSync(path.resolve('build/template/module'))
                 .toString(),
@@ -38,11 +35,7 @@ parseFile(path.resolve(`db/ip2location/${file}`))
                 .readFileSync(path.resolve('build/template/test'))
                 .toString(),
         }
-        let detectTemplateItems = {
-            require: [],
-            use: [],
-        }
-        let indexTempletItems = []
+        let indexTemplet = []
         _.forEach(flatDatabase, (data, language) => {
             // db file
             fs.writeFileSync(
@@ -61,18 +54,9 @@ parseFile(path.resolve(`db/ip2location/${file}`))
             )
         })
         // update template items
-        _.forEach(languages, (countries, language) => {
-            // add to index template
-            indexTempletItems.push(
+        _.forEach(_.keys(languages), (language) => {
+            indexTemplet.push(
                 `exports.is${language} = require('./language/${language}')`
-            )
-            // add to detect require template
-            detectTemplateItems.require.push(
-                `const is${language} = require('./${language}')`
-            )
-            // add to detect require template
-            detectTemplateItems.use.push(
-                `await is${language}(ip).then((status) => { if (status) { resolve('${language}') } })`
             )
         })
         // update index
@@ -80,21 +64,8 @@ parseFile(path.resolve(`db/ip2location/${file}`))
             path.resolve('index.js'),
             template.index.replace(
                 new RegExp(/{{REQUIRE}}/g),
-                indexTempletItems.join('\n')
+                indexTemplet.join('\n')
             )
-        )
-        // update detect
-        fs.writeFileSync(
-            path.resolve('language/detect.js'),
-            template.detect
-                .replace(
-                    new RegExp(/{{REQUIRE}}/g),
-                    detectTemplateItems.require.join('\n')
-                )
-                .replace(
-                    new RegExp(/{{USE}}/g),
-                    detectTemplateItems.use.join('\n\t\t')
-                )
         )
         logUpdate(`Done.`)
     })

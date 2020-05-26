@@ -27,9 +27,26 @@ npm install langip --save
 ```javascript
 const langip = require("langip")
 
+/*
+    detect()
+
+        ip          String:required
+
+        fallback    String:optional
+                    default:"En"
+
+        target      Array:optional:priority
+                    default:["Ar", "Fa", "Zh", "Es", "Fr", "Tr", "Ko"]
+*/
+
+async () => {
+    let lang = await langip.detect("8.8.8.8","En")  /* detect(ip, fallback, target) */
+    console.log(lang)   /* En */
+})
+
 /* async await */
 async () => {
-    let lang = await langip.detect("8.8.8.8","En")  /* detect(ip,fallback) */
+    let lang = await langip.detect("8.8.8.8")  /* detect(ip, fallback, target) */
     console.log(lang)   /* En */
 })
 
@@ -267,7 +284,10 @@ npm run test
   √ detect [188.115.112.51] => [Fr] (3 ms)
   √ detect [217.195.200.161] => [Tr] (2 ms)
   √ detect [134.75.232.150] => [Ko] (2 ms)
-  √ detect [0.0.0.0] => [fallback] (1 ms)
+  √ detect fallback [0.0.0.0] => [En] (1 ms)
+  √ detect custom fallback [Fa] [0.0.0.0] => [Fa] (1 ms)
+  √ detect custom target [Ar, Fa] [185.141.135.87] => [Fa] (1 ms)
+  √ detect custom target [Ar] [185.141.135.87] => [En] (1 ms)
 ```
 
 -   isAr
