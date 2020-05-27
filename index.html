@@ -432,7 +432,7 @@
             isKoIp.addEventListener("change", isKo)
             //
             var version = document.getElementById("version")
-            async function fetchNPM() {
+            async function fetchVersion() {
                 var response = await fetch(
                     "https://raw.githubusercontent.com/dalirnet/langip/master/package.json"
                 )
@@ -440,7 +440,7 @@
                 version.innerText = "v" + json.version
             }
             window.addEventListener("load", function () {
-                fetchNPM()
+                fetchVersion()
                 setTimeout(function () {
                     detect()
                     setTimeout(function () {
