@@ -45,13 +45,13 @@ const isKo = require("langip/language/Ko")
 <script src="https://unpkg.com/langip@latest/dist/langip.js"></script>
 
 <!-- As specific language (recommended) -->
-<script src="https://unpkg.com/langip@latest/dist/iaAr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaFa.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaZh.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaEs.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaFr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaTr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/iaKo.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isAr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isFa.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isZh.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isEs.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isFr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isTr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/isKo.js"></script>
 ```
 
 ---

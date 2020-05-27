@@ -1,6 +1,6 @@
 /*!
  * 
- *     LangIp  v1.1.2
+ *     LangIp  v1.1.3
  *     url     https://github.com/dalirnet/langip#readme
  *     file    /dist/isZh.js
  *     lib     isZh()
