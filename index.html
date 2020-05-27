@@ -434,9 +434,10 @@
             var version = document.getElementById("version")
             async function fetchNPM() {
                 var response = await fetch(
-                    "https://registry.npmjs.org/langip"
-                ).json()
-                version.innerText = "v" + response["dist-tags"].latest
+                    "https://raw.githubusercontent.com/dalirnet/langip/master/package.json"
+                )
+                var json = await response.json()
+                version.innerText = "v" + json.version
             }
             window.addEventListener("load", function () {
                 fetchNPM()
