@@ -13,6 +13,10 @@
             "path": "language"
         },
         {
+            "name": "dist",
+            "path": "dist"
+        },
+        {
             "name": "test",
             "path": "test"
         },
@@ -38,8 +42,10 @@
             "build": true,
             "db": true,
             "language": true,
-            "test": true
+            "test": true,
+            "dist": true
         },
-        "explorerExclude.backup": null
+        "explorerExclude.backup": null,
+        "liveServer.settings.multiRootWorkspaceName": "root"
     }
 }

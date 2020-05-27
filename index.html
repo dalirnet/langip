@@ -1,0 +1,450 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="icon"
+            class="js-site-favicon"
+            type="image/svg+xml"
+            href="https://github.githubassets.com/favicons/favicon.svg"
+        />
+        <title>Detect language with IP address</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Rubik:300"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <style>
+            body {
+                font-family: "Rubik", sans-serif;
+                background: #e9e9e9;
+                font-size: 12px;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .main {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                width: 100%;
+                max-width: 600px;
+                padding: 0 20px;
+                box-sizing: border-box;
+                background: #e1e1e1;
+                border-radius: 8px;
+            }
+
+            .row {
+                display: flex;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin: 15px 0;
+                color: #555;
+            }
+
+            .row strong {
+                margin: 0 2px;
+                color: #000;
+            }
+
+            input {
+                font-family: "Rubik", sans-serif;
+                border: none;
+                border-radius: 4px;
+                height: 24px;
+                width: 100px;
+                padding: 0px 5px;
+                box-sizing: border-box;
+                font-size: 12px;
+                margin: 0 5px;
+                text-align: center;
+                background: #f1f1f1;
+            }
+
+            .request {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .equal {
+                margin: 0 10px;
+                font-size: 10px;
+                overflow: hidden;
+                white-space: nowrap;
+                color: #ccc;
+            }
+
+            .result {
+                display: flex;
+                align-items: flex-end;
+                flex: 1;
+                color: #000;
+                font-size: 12px;
+            }
+
+            .result span {
+                font-size: 9px;
+                margin-left: 6px;
+                font-weight: normal;
+                white-space: nowrap;
+            }
+
+            h1 strong {
+                font-size: 12px;
+            }
+
+            a,
+            a:visited,
+            a:active {
+                color: inherit;
+                text-decoration: none;
+            }
+
+            h1,
+            h5 {
+                display: flex;
+                width: 100%;
+                align-items: baseline;
+                justify-content: space-between;
+                padding: 10px 0;
+                margin: 10px 0;
+            }
+
+            h1 {
+                border-bottom: solid #ccc 1px;
+            }
+
+            h5 {
+                border-top: solid #ccc 1px;
+                font-weight: normal;
+            }
+
+            h1 small {
+                font-size: 12px;
+                margin: 0 5px;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <h1>
+                <a href="https://github.com/dalirnet/langip#readme">
+                    <span>LangIp</span>
+                    <strong>v1.1.2</strong>
+                </a>
+                <small>Browser Demo</small>
+            </h1>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>detect</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="detectIp"
+                        placeholder="Ip"
+                        value="188.115.112.51"
+                    />
+                    <span>,</span>
+                    <input
+                        type="text"
+                        id="detectFallback"
+                        placeholder="Fallback"
+                        value="En"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="detectResult">?</strong>
+                    <span id="detectTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isAr</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isArIp"
+                        placeholder="Ip"
+                        value="195.16.171.140"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isArResult">?</strong>
+                    <span id="isArTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isFa</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isFaIp"
+                        placeholder="Ip"
+                        value="109.122.208.134"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isFaResult">?</strong>
+                    <span id="isFaTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isZh</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isZhIp"
+                        placeholder="Ip"
+                        value="103.70.53.52"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isZhResult">?</strong>
+                    <span id="isZhTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isEs</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isEsIp"
+                        placeholder="Ip"
+                        value="192.148.167.205"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isEsResult">?</strong>
+                    <span id="isEsTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isFr</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isFrIp"
+                        placeholder="Ip"
+                        value="188.115.112.51"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isFrResult">?</strong>
+                    <span id="isFrTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isTr</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isTrIp"
+                        placeholder="Ip"
+                        value="217.195.200.161"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isTrResult">?</strong>
+                    <span id="isTrTime">-</span>
+                </span>
+            </div>
+            <div class="row">
+                <div class="request">
+                    <span>langip.</span>
+                    <strong>isKo</strong>
+                    <span>(</span>
+                    <input
+                        type="text"
+                        id="isKoIp"
+                        placeholder="Ip"
+                        value="134.75.232.150"
+                    />
+                    <span>)</span>
+                </div>
+                <span class="equal"
+                    >==========================================================================</span
+                >
+                <span class="result">
+                    <strong id="isKoResult">?</strong>
+                    <span id="isKoTime">-</span>
+                </span>
+            </div>
+            <h5>
+                <span>
+                    <strong>+</strong>
+                    <span>Change & Enter</span>
+                </span>
+                <a href="https://github.com/dalirnet/langip">
+                    <strong><small>Github</small></strong>
+                </a>
+            </h5>
+        </div>
+        <script src="https://unpkg.com/langip@latest/dist/langip.js"></script>
+        <script>
+            var detectIp = document.getElementById("detectIp")
+            var detectFallback = document.getElementById("detectFallback")
+            var detectResult = document.getElementById("detectResult")
+            var detectTime = document.getElementById("detectTime")
+            function detect() {
+                var time = Date.now()
+                langip
+                    .detect(detectIp.value, detectFallback.value)
+                    .then(function (lang) {
+                        detectResult.innerText = lang
+                        detectTime.innerText = Date.now() - time + " ms"
+                    })
+            }
+            detectIp.addEventListener("change", detect)
+            detectFallback.addEventListener("change", detect)
+            //
+            var isArIp = document.getElementById("isArIp")
+            var isArResult = document.getElementById("isArResult")
+            var isArTime = document.getElementById("isArTime")
+            function isAr() {
+                var time = Date.now()
+                langip.isAr(isArIp.value).then(function (status) {
+                    isArResult.innerText = status ? "True" : "False"
+                    isArTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isArIp.addEventListener("change", isAr)
+            //
+            var isFaIp = document.getElementById("isFaIp")
+            var isFaResult = document.getElementById("isFaResult")
+            var isFaTime = document.getElementById("isFaTime")
+            function isFa() {
+                var time = Date.now()
+                langip.isFa(isFaIp.value).then(function (status) {
+                    isFaResult.innerText = status ? "True" : "False"
+                    isFaTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isFaIp.addEventListener("change", isFa)
+            //
+            var isZhIp = document.getElementById("isZhIp")
+            var isZhResult = document.getElementById("isZhResult")
+            var isZhTime = document.getElementById("isZhTime")
+            function isZh() {
+                var time = Date.now()
+                langip.isZh(isZhIp.value).then(function (status) {
+                    isZhResult.innerText = status ? "True" : "False"
+                    isZhTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isZhIp.addEventListener("change", isZh)
+            //
+            var isEsIp = document.getElementById("isEsIp")
+            var isEsResult = document.getElementById("isEsResult")
+            var isEsTime = document.getElementById("isEsTime")
+            function isEs() {
+                var time = Date.now()
+                langip.isEs(isEsIp.value).then(function (status) {
+                    isEsResult.innerText = status ? "True" : "False"
+                    isEsTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isEsIp.addEventListener("change", isEs)
+            //
+            var isFrIp = document.getElementById("isFrIp")
+            var isFrResult = document.getElementById("isFrResult")
+            var isFrTime = document.getElementById("isFrTime")
+            function isFr() {
+                var time = Date.now()
+                langip.isFr(isFrIp.value).then(function (status) {
+                    isFrResult.innerText = status ? "True" : "False"
+                    isFrTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isFrIp.addEventListener("change", isFr)
+            //
+            var isTrIp = document.getElementById("isTrIp")
+            var isTrResult = document.getElementById("isTrResult")
+            var isTrTime = document.getElementById("isTrTime")
+            function isTr() {
+                var time = Date.now()
+                langip.isTr(isTrIp.value).then(function (status) {
+                    isTrResult.innerText = status ? "True" : "False"
+                    isTrTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isTrIp.addEventListener("change", isTr)
+            //
+            var isKoIp = document.getElementById("isKoIp")
+            var isKoResult = document.getElementById("isKoResult")
+            var isKoTime = document.getElementById("isKoTime")
+            function isKo() {
+                var time = Date.now()
+                langip.isKo(isKoIp.value).then(function (status) {
+                    isKoResult.innerText = status ? "True" : "False"
+                    isKoTime.innerText = Date.now() - time + " ms"
+                })
+            }
+            isKoIp.addEventListener("change", isKo)
+            //
+            window.addEventListener("load", function () {
+                setTimeout(function () {
+                    detect()
+                    setTimeout(function () {
+                        isAr()
+                        isFa()
+                        isZh()
+                        isEs()
+                        isFr()
+                        isTr()
+                        isKo()
+                    }, 500)
+                }, 500)
+            })
+        </script>
+    </body>
+</html>

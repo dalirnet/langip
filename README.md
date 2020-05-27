@@ -2,7 +2,7 @@
 
 ---
 
-✔️ **Free** & no registration
+✔️ **Free** & No registration
 
 ✔️ **Fast** & No **HTTP** connection
 
@@ -14,18 +14,52 @@
 
 ---
 
-#### Usage
+#### Install
 
--   Install
+-   Npm
 
 ```bash
 npm install langip --save
 ```
 
+```javascript
+/* As multi language detector */
+const langip = require("langip")
+
+/* As specific language (recommended) */
+const isAr = require("langip/language/Ar")
+const isFa = require("langip/language/Fa")
+const isZh = require("langip/language/Zh")
+const isEs = require("langip/language/Es")
+const isFr = require("langip/language/Fr")
+const isTr = require("langip/language/Tr")
+const isKo = require("langip/language/Ko")
+```
+
+-   CDN
+
+```html
+<!-- As multi language detector  -->
+<script src="https://unpkg.com/langip@latest/dist/langip.js"></script>
+
+<!-- As specific language (recommended) -->
+<script src="https://unpkg.com/langip@latest/dist/iaAr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaFa.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaZh.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaEs.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaFr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaTr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/iaKo.js"></script>
+```
+
+---
+
+#### Usage
+
 -   As multi language detector
 
 ```javascript
-const langip = require("langip")
+
 
 /* async await */
 async () => {
@@ -64,8 +98,6 @@ langip.detect("103.127.119.132").then((lang) => {
     Countries [SA, IQ, KW, BH, AE, QA, OM, EG, SD]
 */
 
-const isAr = require("langip/language/Ar")
-
 /* async await */
 async () => {
     let status = await isAr("194.31.220.14")    /* isAr(ip) */
@@ -85,8 +117,6 @@ isAr("1.1.1.1").then((status) => {
     Persian [Fa]
     Countries [IR, AF, TJ]
 */
-
-const isFa = require("langip/language/Fa")
 
 /* async await */
 async () => {
@@ -108,8 +138,6 @@ isFa("103.127.119.132").then((status) => {
     Countries [CN, SG, TW]
 */
 
-const isZh = require("langip/language/Zh")
-
 /* async await */
 async () => {
     let status = await isZh("8.8.8.8")  /* isZh(ip) */
@@ -129,8 +157,6 @@ isZh("103.70.53.52").then((status) => {
     Spanish [Es]
     Countries [ES, MX]
 */
-
-const isEs = require("langip/language/Es")
 
 /* async await */
 async () => {
@@ -152,8 +178,6 @@ isEs("192.148.167.205").then((status) => {
     Countries [FR, CD]
 */
 
-const isFr = require("langip/language/Fr")
-
 /* async await */
 async () => {
     let status = await isFr("8.8.8.8")  /* isFr(ip) */
@@ -174,8 +198,6 @@ isFr("188.115.112.51").then((status) => {
     Countries [TR]
 */
 
-const isTr = require("langip/language/Tr")
-
 /* async await */
 async () => {
     let status = await isTr("8.8.8.8")  /* isTr(ip) */
@@ -195,8 +217,6 @@ isTr("217.195.200.161").then((status) => {
     Korean [Ko]
     Countries [KR]
 */
-
-const isKo = require("langip/language/Ko")
 
 /* async await */
 async () => {
@@ -232,10 +252,11 @@ console.log(ip) /* 2.144.0.0 */
 
 To update IP2Location database or add a new language detector
 
--   config file in _**build/config.json**_
+-   config file in **build/config.json**
 
-    -   ISO [639-1](https://www.loc.gov/standards/iso639-2/php/code_list.php) Language Code List
-    -   List of [official](https://en.wikipedia.org/wiki/List_of_languages_by_the_number_of_countries_in_which_they_are_recognized_as_an_official_language#List) languages
+    -   [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) Language Code(**upperCaseFirst**)
+    -   [ISO 3161](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) Country Code (**upperCase**)
+    -   [List of official languages](https://en.wikipedia.org/wiki/List_of_languages_by_the_number_of_countries_in_which_they_are_recognized_as_an_official_language#List)
 
 ```json
 {
