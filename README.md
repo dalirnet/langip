@@ -61,19 +61,6 @@ const isKo = require("langip/language/Ko")
 -   As multi language detector
 
 ```javascript
-
-
-/* async await */
-async () => {
-    let lang = await langip.detect("8.8.8.8")  /* detect(ip, fallback, target) */
-    console.log(lang)   /* En */
-})
-
-/* promise */
-langip.detect("103.127.119.132").then((lang) => {
-    console.log(lang)   /* Fa */
-})
-
 /*
     detect(
         ip,         (String)
@@ -89,6 +76,17 @@ langip.detect("103.127.119.132").then((lang) => {
                     (Default:["Ar", "Fa", "Zh", "Es", "Fr", "Tr", "Ko"])
     )
 */
+
+/* async await */
+async () => {
+    let lang = await langip.detect("8.8.8.8")  /* detect(ip, fallback, target) */
+    console.log(lang)   /* En */
+})
+
+/* promise */
+langip.detect("103.127.119.132").then((lang) => {
+    console.log(lang)   /* Fa */
+})
 ```
 
 -   As specific language **(recommended)**

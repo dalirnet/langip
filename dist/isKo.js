@@ -1,6 +1,6 @@
 /*!
  * 
- *     LangIp  v1.1.3
+ *     LangIp  v1.1.4
  *     url     https://github.com/dalirnet/langip#readme
  *     file    /dist/isKo.js
  *     lib     isKo()
