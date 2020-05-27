@@ -1,5 +1,7 @@
 #### Detect language with IP address (langip)
 
+[Demo](https://dalirnet.github.io/langip/index.html)
+
 ---
 
 ✔️ **Free** & No registration
