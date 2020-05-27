@@ -140,7 +140,7 @@
             <h1>
                 <a href="https://github.com/dalirnet/langip#readme">
                     <span>LangIp</span>
-                    <strong>v1.1.2</strong>
+                    <strong id="version"></strong>
                 </a>
                 <small>Browser Demo</small>
             </h1>
@@ -431,7 +431,15 @@
             }
             isKoIp.addEventListener("change", isKo)
             //
+            var version = document.getElementById("version")
+            async function fetchNPM() {
+                var response = await fetch(
+                    "https://registry.npmjs.org/langip"
+                ).json()
+                version.innerText = "v" + response["dist-tags"].latest
+            }
             window.addEventListener("load", function () {
+                fetchNPM()
                 setTimeout(function () {
                     detect()
                     setTimeout(function () {
