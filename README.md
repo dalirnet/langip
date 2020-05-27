@@ -42,16 +42,16 @@ const isKo = require("langip/language/Ko")
 
 ```html
 <!-- As multi language detector  -->
-<script src="https://unpkg.com/langip@latest/dist/langip.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/index.js"></script>
 
 <!-- As specific language (recommended) -->
-<script src="https://unpkg.com/langip@latest/dist/isAr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isFa.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isZh.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isEs.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isFr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isTr.js"></script>
-<script src="https://unpkg.com/langip@latest/dist/isKo.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Ar.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Fa.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Zh.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Es.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Fr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Tr.js"></script>
+<script src="https://unpkg.com/langip@latest/dist/Ko.js"></script>
 ```
 
 ---
@@ -78,14 +78,14 @@ const isKo = require("langip/language/Ko")
 */
 
 /* async await */
-async () => {
-    let lang = await langip.detect("8.8.8.8")  /* detect(ip, fallback, target) */
-    console.log(lang)   /* En */
-})
+var detect = async () => {
+    let lang = await langip.detect("8.8.8.8") /* detect(ip, fallback, target) */
+    console.log(lang) /* En */
+}
 
 /* promise */
 langip.detect("103.127.119.132").then((lang) => {
-    console.log(lang)   /* Fa */
+    console.log(lang) /* Fa */
 })
 ```
 
@@ -99,10 +99,10 @@ langip.detect("103.127.119.132").then((lang) => {
 */
 
 /* async await */
-async () => {
-    let status = await isAr("194.31.220.14")    /* isAr(ip) */
+var check = async () => {
+    let status = await isAr("194.31.220.14") /* isAr(ip) */
     console.log(status) /* true */
-})
+}
 
 /* promise */
 isAr("1.1.1.1").then((status) => {
@@ -119,10 +119,10 @@ isAr("1.1.1.1").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isFa("8.8.8.8")  /* isFa(ip) */
+var check = async () => {
+    let status = await isFa("8.8.8.8") /* isFa(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isFa("103.127.119.132").then((status) => {
@@ -139,10 +139,10 @@ isFa("103.127.119.132").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isZh("8.8.8.8")  /* isZh(ip) */
+var check = async () => {
+    let status = await isZh("8.8.8.8") /* isZh(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isZh("103.70.53.52").then((status) => {
@@ -159,10 +159,10 @@ isZh("103.70.53.52").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isEs("8.8.8.8")  /* isEs(ip) */
+var check = async () => {
+    let status = await isEs("8.8.8.8") /* isEs(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isEs("192.148.167.205").then((status) => {
@@ -179,10 +179,10 @@ isEs("192.148.167.205").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isFr("8.8.8.8")  /* isFr(ip) */
+var check = async () => {
+    let status = await isFr("8.8.8.8") /* isFr(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isFr("188.115.112.51").then((status) => {
@@ -199,10 +199,10 @@ isFr("188.115.112.51").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isTr("8.8.8.8")  /* isTr(ip) */
+var check = async () => {
+    let status = await isTr("8.8.8.8") /* isTr(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isTr("217.195.200.161").then((status) => {
@@ -219,10 +219,10 @@ isTr("217.195.200.161").then((status) => {
 */
 
 /* async await */
-async () => {
-    let status = await isKo("8.8.8.8")  /* isKo(ip) */
+var check = async () => {
+    let status = await isKo("8.8.8.8") /* isKo(ip) */
     console.log(status) /* false */
-})
+}
 
 /* promise */
 isKo("134.75.232.150").then((status) => {
