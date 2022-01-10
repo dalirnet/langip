@@ -1,4 +1,4 @@
-#### Detect language with IP address [Updated Oct 2021]
+#### Detect language with IP address [Updated Jan 2022]
 
 [Demo](https://dalirnet.github.io/langip/index.html)
 
